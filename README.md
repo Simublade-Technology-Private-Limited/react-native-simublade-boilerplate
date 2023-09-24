@@ -35,18 +35,19 @@ yarn run <command/script>
 ```
 
 ## Project Structure
+
 #### Out main folder here is the src folder
 
-| Folder         | Description |
-| --------       | ----------- |
-| assets         | All fonts and images must be added to their respective folders  |
-| container      | Contains AppContainer component and all other stack      screens    |
-| navigation     | Contains navigation index file, bottom tab bar file, auth, unauth and other stack files  |
-| components     | All the reusable and standalone components must be defined here  |
-| actions        | All the actions creators must be defined here  |
-| reducer        | All the reducer files must be defined here  |
-| store          | This container the main store file |
-| lib            | All the custom hooks must be defined here  |
-| network        | All the network calls must be defined here |
-| hooks          | All the custom hooks must be defined here  |
-| utils          | Contains all the app utilities here  |
+| Folder     | Description                                                                             |
+| ---------- | --------------------------------------------------------------------------------------- |
+| assets     | All fonts and images must be added to their respective folders                          |
+| container  | Contains AppContainer component and all other stack screens                             |
+| navigation | Contains navigation index file, bottom tab bar file, auth, unauth and other stack files |
+| components | All the reusable and standalone components must be defined here                         |
+| actions    | All the action creators must be defined here                                            |
+| reducer    | All the reducer files must be defined here                                              |
+| store      | This contains the main store file                                                       |
+| lib        | Contains toast component, app input component etc                                       |
+| network    | All the network calls must be defined here                                              |
+| hooks      | All the custom hooks must be defined here                                               |
+| utils      | Contains all the app utilities here                                                     |
