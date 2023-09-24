@@ -3,5 +3,6 @@
     "cSpell.words": [
         "Authorised",
         "unauth"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

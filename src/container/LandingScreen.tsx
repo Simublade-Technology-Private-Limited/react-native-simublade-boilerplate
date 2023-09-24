@@ -3,7 +3,12 @@ import React from 'react';
 
 const LandingScreen = () => {
   return (
-    <View>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <Text>LandingScreen</Text>
     </View>
   );
