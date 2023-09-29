@@ -1,16 +1,15 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {AppText} from '../components/AppText';
+import Theme from '../components/Theme';
+import {View} from 'react-native';
 
 const Home = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Home</Text>
-    </View>
+    <Theme isAreaInsets containerStyle={{backgroundColor: 'red'}}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <AppText>Home</AppText>
+      </View>
+    </Theme>
   );
 };
 

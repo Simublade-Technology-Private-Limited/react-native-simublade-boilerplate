@@ -1,4 +1,5 @@
 export const COLORS = {
+  primary_background_color: '#FFFFFF',
   primary_theme: '#FFFFDD',
   white_color: '#FFFFFF',
   transparent: 'transparent',

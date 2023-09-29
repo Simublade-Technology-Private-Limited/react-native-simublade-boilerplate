@@ -2,7 +2,8 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "cSpell.words": [
         "Authorised",
-        "unauth"
+        "unauth",
+        "USECONTROLLERPROPS"
     ],
     "java.configuration.updateBuildConfiguration": "interactive"
 }
