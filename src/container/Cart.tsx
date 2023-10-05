@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const LandingScreen = () => {
+const Cart = () => {
   return (
     <View
       style={{
@@ -9,9 +9,9 @@ const LandingScreen = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>LandingScreen</Text>
+      <Text>Cart</Text>
     </View>
   );
 };
 
-export default LandingScreen;
+export default Cart;

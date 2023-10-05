@@ -7,6 +7,8 @@ import {FONT_CONSTANTS} from '../utils/constants/fonts';
 import {NAVIGATION_CONSTANTS} from '../utils/constants/navigationConstants';
 import {IMAGES} from '../utils/constants/assets';
 import Home from '../container/Home';
+import Cart from '../container/Cart';
+import Profile from '../container/Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,10 +27,40 @@ export default (_props: any) => {
         options={{
           tabBarIcon: ({focused}: any) => (
             <View style={styles.container}>
-              <Image source={focused ? IMAGES.error : IMAGES.success} />
+              <Image source={focused ? IMAGES.home : IMAGES.home} />
               <Text
                 style={[focused ? styles.focusBottomText : styles.bottomText]}>
-                {''}
+                {'Home'}
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={NAVIGATION_CONSTANTS.cart_screen}
+        component={Cart}
+        options={{
+          tabBarIcon: ({focused}: any) => (
+            <View style={styles.container}>
+              <Image source={focused ? IMAGES.cart : IMAGES.cart} />
+              <Text
+                style={[focused ? styles.focusBottomText : styles.bottomText]}>
+                {'Cart'}
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={NAVIGATION_CONSTANTS.profile_screen}
+        component={Profile}
+        options={{
+          tabBarIcon: ({focused}: any) => (
+            <View style={styles.container}>
+              <Image source={focused ? IMAGES.profile : IMAGES.profile} />
+              <Text
+                style={[focused ? styles.focusBottomText : styles.bottomText]}>
+                {'Profile'}
               </Text>
             </View>
           ),

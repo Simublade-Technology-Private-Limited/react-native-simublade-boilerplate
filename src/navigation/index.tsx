@@ -30,12 +30,12 @@ const RootStackScreen = () => {
       let storedData = await getUserAndAuthData();
       dispatch(actionCreators.updatePersistedData(storedData));
     } catch (error) {
-      console.log("Keychain couldn't be accessed!", error);
+      console.log("Key-chain couldn't be accessed!", error);
     }
   };
 
   const getNavigationStackName = () => {
-    if (accessToken) {
+    if (!accessToken) {
       return NAVIGATION_CONSTANTS.authorised_stack;
     } else {
       return NAVIGATION_CONSTANTS.unauthorised_stack;

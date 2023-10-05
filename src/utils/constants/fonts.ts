@@ -1,7 +1,3 @@
-import {Platform} from 'react-native';
-
-const isAndroid = Platform.OS === 'android';
-
 const primary_font = 'Raleway-';
 
 export const FONT_CONSTANTS = {

@@ -8,6 +8,8 @@ export const NAVIGATION_CONSTANTS = {
   onboarding_screen: 'onboarding_screen',
   landing_screen: 'landing_screen',
   home_screen: 'home_screen',
+  profile_screen: 'profile_screen',
+  cart_screen: 'cart_screen',
 };
 
 export const NAVIGATION_PARAMS = {
