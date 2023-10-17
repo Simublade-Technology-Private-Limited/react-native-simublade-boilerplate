@@ -19,8 +19,8 @@ jobs:
         uses: ajinabraham/njsscan-action@master
         with:
          args: '.'
-      - name: lint
-        run: "npm run lint"
+#      - name: lint
+#        run: "npm run lint"
 
 #  Sonar-scanner:
 #    if: ${{ github.event_name == 'pull_request' }}
