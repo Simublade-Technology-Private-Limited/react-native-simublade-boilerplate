@@ -60,14 +60,14 @@ export class DateUtils {
     shouldAddExtraSecond?: boolean,
   ): string => {
     if (isoString) {
-      let tempDate = moment(isoString);
+      const tempDate = moment(isoString);
       if (shouldAddExtraSecond) tempDate.add(1, 'seconds');
       return tempDate.format(TimeType.TWELVE_HOUR_HUMAN);
     } else return '';
   };
 
   static convertUtcToLocal = (date: string): moment.Moment => {
-    let tempDate = moment(date).utc().local();
+    const tempDate = moment(date).utc().local();
     return tempDate;
   };
 
@@ -82,14 +82,14 @@ export class DateUtils {
    */
 
   static getStartDayOfMonth = (month?: number, year?: number): string => {
-    let date = moment();
+    const date = moment();
     if (month !== undefined) {
       date.set('month', month);
     }
     if (year !== undefined) {
       date.set('year', year);
     }
-    let dateString = date.startOf('months').toISOString();
+    const dateString = date.startOf('months').toISOString();
 
     return dateString;
   };
@@ -100,14 +100,14 @@ export class DateUtils {
    * @returns UTC ISO string
    */
   static getEndDayOfMonth = (month?: number, year?: number) => {
-    let date = moment();
+    const date = moment();
     if (month !== undefined) {
       date.set('month', month);
     }
     if (year !== undefined) {
       date.set('year', year);
     }
-    let dateString = date.endOf('months').toISOString();
+    const dateString = date.endOf('months').toISOString();
     return dateString;
   };
 }

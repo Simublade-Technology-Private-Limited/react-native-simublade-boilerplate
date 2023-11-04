@@ -11,7 +11,6 @@ export enum API_REQUEST {
 export enum API_HEADERS {
   CONTENT_TYPE = 'Content-Type',
   AUTHORIZATION = 'Authorization',
-  TYPE_FORM_DATA = 'multipart/form-data',
   TYPE_RAW_DATA = 'application/json',
   TYPE_MULTIPART_DATA = 'multipart/form-data',
   TOKEN_TYPE = 'Bearer',

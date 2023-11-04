@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 import reducer from '../reducers';
 
-let composeEnhancers = compose;
+const composeEnhancers = compose;
 
 const loggerMiddleware = createLogger({
   predicate: (_getState, _action) => __DEV__,
