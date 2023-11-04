@@ -2,7 +2,6 @@ import React from 'react';
 import {AppText} from '../components/AppText';
 import Theme from '../components/Theme';
 import {View} from 'react-native';
-import {TextBase} from 'react-native';
 
 const Home = () => {
   return (
