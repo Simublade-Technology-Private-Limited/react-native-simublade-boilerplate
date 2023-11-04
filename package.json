@@ -12,7 +12,7 @@
     "lint:fix": "eslint App.tsx index.js **/*.{ts,tsx} --fix",
     "prettify": "prettier --write --config .prettierrc.js App.tsx index.js **/*.{ts,tsx}",
     "analyze-code": "npm run prettify && npm run lint:fix && npm run lint",
-    "postinstall": "patch-package && husky install"
+    "postinstall": "patch-package"
   },
   "husky": {
     "hooks": {
