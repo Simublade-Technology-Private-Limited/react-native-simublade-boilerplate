@@ -12,8 +12,8 @@ const initialState = {
 
 export default createReducer(initialState, {
   [ACTION_CONSTANTS.LOGIN_SUCCESS](state: any, action: any) {
-    let tokenData = action?.[APP_CONSTANTS.token_data];
-    let userData = action?.[APP_CONSTANTS.user_data];
+    const tokenData = action?.[APP_CONSTANTS.token_data];
+    const userData = action?.[APP_CONSTANTS.user_data];
     setUserAndAuthData({[APP_CONSTANTS.data]: userData, ...tokenData});
 
     return {
@@ -29,7 +29,7 @@ export default createReducer(initialState, {
   },
 
   [ACTION_CONSTANTS.UPDATE_USER](state: any, action: any) {
-    let userData = action?.[APP_CONSTANTS.user_data];
+    const userData = action?.[APP_CONSTANTS.user_data];
 
     if (userData) {
       setUserAndAuthData({[APP_CONSTANTS.user_data]: userData});

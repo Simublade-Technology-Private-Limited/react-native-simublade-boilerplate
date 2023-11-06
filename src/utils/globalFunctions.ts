@@ -26,7 +26,7 @@ export const hasNotch = DeviceInfo.hasNotch();
 export const hasDynamicIsland = DeviceInfo.hasDynamicIsland();
 
 export const objToFormData = (rawData: any) => {
-  let formData: FormData = new FormData();
+  const formData: FormData = new FormData();
   if (rawData && rawData != null && typeof rawData === 'object') {
     Object.keys(rawData).map((item, _index: number) => {
       formData.append(item, rawData[item]);

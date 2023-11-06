@@ -1,3 +1,4 @@
+import {emptyFunction} from './../utils/globalFunctions';
 import {Alert} from 'react-native';
 import {STRING_CONSTANTS} from '../utils/constants/stringConstants';
 
@@ -13,7 +14,7 @@ export function showAlertDialog(
   title: string,
   message: string,
   buttonTitle: string,
-  callback: Function,
+  callback: typeof emptyFunction,
 ) {
   Alert.alert(
     title,
@@ -26,9 +27,9 @@ export function showDoubleActionAlertDialog(
   title: string,
   message: string,
   positiveTitle: string,
-  positiveCallback: Function,
+  positiveCallback: typeof emptyFunction,
   negativeTitle: string,
-  negativeCallback: Function,
+  negativeCallback: typeof emptyFunction,
 ) {
   Alert.alert(
     title,
@@ -52,11 +53,11 @@ export function showTripleActionAlertDialog(
   title: string,
   message: string,
   positiveTitle: string,
-  positiveCallback: Function,
+  positiveCallback: typeof emptyFunction,
   negativeTitle: string,
-  negativeCallback: Function,
+  negativeCallback: typeof emptyFunction,
   neutralTitle: string,
-  neutralCallback: Function,
+  neutralCallback: typeof emptyFunction,
 ) {
   Alert.alert(
     title,

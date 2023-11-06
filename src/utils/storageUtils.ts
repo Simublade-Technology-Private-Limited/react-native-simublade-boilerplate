@@ -3,18 +3,18 @@ import {API_CONSTANTS} from './constants/apiConstants';
 import {APP_CONSTANTS} from './constants/appConstants';
 
 export const getUserAndAuthData: any = async () => {
-  let storedData = await AsyncStorage.multiGet([
+  const storedData = await AsyncStorage.multiGet([
     APP_CONSTANTS.data,
     APP_CONSTANTS.access_token_key,
     APP_CONSTANTS.refresh_token_key,
   ]);
 
-  let convertedMapData = new Map(storedData);
-  let userData: any = convertedMapData.get(APP_CONSTANTS.data);
-  let accessToken = convertedMapData.get(API_CONSTANTS.access_token_key);
-  let refreshToken = convertedMapData.get(API_CONSTANTS.refresh_token_key);
+  const convertedMapData = new Map(storedData);
+  const userData: any = convertedMapData.get(APP_CONSTANTS.data);
+  const accessToken = convertedMapData.get(API_CONSTANTS.access_token_key);
+  const refreshToken = convertedMapData.get(API_CONSTANTS.refresh_token_key);
 
-  let obj: any = {};
+  const obj: any = {};
 
   if (userData) {
     obj[APP_CONSTANTS.data] = JSON.parse(userData);
