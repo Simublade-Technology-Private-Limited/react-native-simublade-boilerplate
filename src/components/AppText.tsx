@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Text, TextProps} from 'react-native';
 import {COLORS} from '../utils/constants/colors';
