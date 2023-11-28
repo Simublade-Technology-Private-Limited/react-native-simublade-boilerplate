@@ -6,10 +6,24 @@ import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {GRADIENT_COLORS} from '../../utils/constants/colors';
 
+/**
+ * @param type: Type of button
+ *
+ * @param buttonTitle: Title of the button to be used. Default value is Done
+ *
+ * @param buttonContainerStyle: Style for button container
+ *
+ * @param buttonTextStyle: Style for button text
+ *
+ * @param gradientButtonColor: Color of the gradient button
+ *
+ * @param onPressHandler: Callback for onPress handler
+ */
+
 const Button = (props: ButtonProps) => {
   const {
     type = ButtonType.SOLID,
-    buttonTitle,
+    buttonTitle = 'Done',
     buttonContainerStyle,
     buttonTextStyle,
     gradientButtonColor,
@@ -24,7 +38,7 @@ const Button = (props: ButtonProps) => {
           activeOpacity={0.8}
           style={[styles.solidButtonContainer, buttonContainerStyle]}>
           <AppText style={[styles.solidButtonText, buttonTextStyle]}>
-            {buttonTitle || 'Done'}
+            {buttonTitle}
           </AppText>
         </TouchableOpacity>
       );
@@ -35,7 +49,7 @@ const Button = (props: ButtonProps) => {
           activeOpacity={0.8}
           style={[styles.outlinedButtonContainer, buttonContainerStyle]}>
           <AppText style={[styles.outlinedButtonText, buttonTextStyle]}>
-            {buttonTitle || 'Done'}
+            {buttonTitle}
           </AppText>
         </TouchableOpacity>
       );
@@ -53,7 +67,7 @@ const Button = (props: ButtonProps) => {
             angleCenter={{x: 0.5, y: 0.5}}
             style={styles.gradientButtonInnerContainer}>
             <AppText style={[styles.solidButtonText, buttonTextStyle]}>
-              {buttonTitle || 'Done'}
+              {buttonTitle}
             </AppText>
           </LinearGradient>
         </TouchableOpacity>
@@ -63,7 +77,7 @@ const Button = (props: ButtonProps) => {
       return (
         <TouchableOpacity onPress={onPressHandler} activeOpacity={0.8}>
           <AppText style={[styles.solidButtonText, buttonTextStyle]}>
-            {buttonTitle || 'Done'}
+            {buttonTitle}
           </AppText>
         </TouchableOpacity>
       );
