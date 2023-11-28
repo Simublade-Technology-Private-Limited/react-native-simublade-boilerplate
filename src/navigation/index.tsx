@@ -13,7 +13,7 @@ import UnAuthorisedStack from './stacks/UnAuthorisedStack';
 const Stack = createNativeStackNavigator<RootStackScreens>();
 
 const RootStackScreen = () => {
-  let showRenderNavigation: boolean = true; //This variable is defined so that we can stop rendering navigation if we have not got values from async store
+  const showRenderNavigation: boolean = true; //This variable is defined so that we can stop rendering navigation if we have not got values from async store
 
   const dispatch = useDispatch();
 
@@ -21,18 +21,18 @@ const RootStackScreen = () => {
     (state: any) => state?.UserReducer?.token?.access || null,
   );
 
-  useEffect(() => {
-    checkAuthStatus();
-  }, []);
-
   const checkAuthStatus = async () => {
     try {
-      let storedData = await getUserAndAuthData();
+      const storedData = await getUserAndAuthData();
       dispatch(actionCreators.updatePersistedData(storedData));
     } catch (error) {
       console.log("Key-chain couldn't be accessed!", error);
     }
   };
+
+  useEffect(() => {
+    checkAuthStatus();
+  }, []);
 
   const getNavigationStackName = () => {
     if (!accessToken) {

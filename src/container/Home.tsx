@@ -3,12 +3,12 @@ import {AppText} from '../components/AppText';
 import Theme from '../components/Theme';
 import {View} from 'react-native';
 import Checkbox from '../components/CheckBox';
-import BottomSheet from '@gorhom/bottom-sheet';
+import {BottomSheetModal} from '@gorhom/bottom-sheet';
 import CustomBottomSheet from '../components/BottomSheet';
 
 const Home = () => {
   const [isChecked, setIsChecked] = useState(false);
-  const bottomSheetRef = useRef<BottomSheet>(null);
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
 
   const handleCheckboxChange = (
     value: boolean | ((prevState: boolean) => boolean),
@@ -16,12 +16,12 @@ const Home = () => {
     setIsChecked(value);
 
     if (value) {
-      bottomSheetRef?.current?.expand();
+      bottomSheetRef?.current?.present();
     }
   };
 
   return (
-    <Theme isAreaInsets containerStyle={{backgroundColor: 'red'}}>
+    <Theme isAreaInsets hideMargin containerStyle={{backgroundColor: 'red'}}>
       <View style={{flex: 1, alignItems: 'center'}}>
         <AppText>Home</AppText>
         <Checkbox
