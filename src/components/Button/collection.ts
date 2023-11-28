@@ -9,7 +9,9 @@ export enum ButtonType {
 
 export interface ButtonProps {
   type?: ButtonType;
+  buttonTitle?: string;
   buttonContainerStyle?: StyleProp<ViewStyle>;
   buttonTextStyle?: StyleProp<TextStyle>;
-  gradientButtonProps?: unknown;
+  gradientButtonColor?: Array<string>;
+  onPressHandler: () => void;
 }

@@ -8,7 +8,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [FIRApp configure];
+  // Uncomment this line once you got googleServiceInfo.plist
+  // [FIRApp configure];
   
   self.moduleName = @"SimubladeReactNativeBoilerplate";
   // You can add your custom initial props in the dictionary below.

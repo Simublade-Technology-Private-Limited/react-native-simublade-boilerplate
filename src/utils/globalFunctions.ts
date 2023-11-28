@@ -4,6 +4,7 @@ import {showToast} from '../lib/ToastConfig';
 import {ToastType} from '../lib/toast/collection';
 import DeviceInfo from 'react-native-device-info';
 import {STRING_CONSTANTS} from './constants/stringConstants';
+import {COLORS} from './constants/colors';
 
 export const isAndroid = () => {
   return Platform.OS === APP_CONSTANTS.device_android;
@@ -67,4 +68,21 @@ export const handleOnPressUrl = async (url: string) => {
   } else {
     showErrorMessage(`${STRING_CONSTANTS.link_open_error}: ${url}`);
   }
+};
+
+// Elevation shadow function
+export const elevationShadowStyle = (
+  elevation: number,
+  shadowColor = COLORS.black,
+  offsetWidth = 2,
+  offsetHeight = 0.5,
+  opacity = 0.6,
+) => {
+  return {
+    elevation,
+    shadowColor: shadowColor,
+    shadowOffset: {width: offsetWidth, height: offsetHeight || 0.5 * elevation},
+    shadowOpacity: opacity,
+    shadowRadius: elevation,
+  };
 };
