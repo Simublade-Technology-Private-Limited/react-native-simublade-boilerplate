@@ -4,6 +4,7 @@ import {showToast} from '../lib/ToastConfig';
 import {ToastType} from '../lib/toast/collection';
 import DeviceInfo from 'react-native-device-info';
 import {STRING_CONSTANTS} from './constants/stringConstants';
+import {COLORS} from './constants/colors';
 
 export const isAndroid = () => {
   return Platform.OS === APP_CONSTANTS.device_android;
@@ -67,4 +68,43 @@ export const handleOnPressUrl = async (url: string) => {
   } else {
     showErrorMessage(`${STRING_CONSTANTS.link_open_error}: ${url}`);
   }
+};
+
+// Elevation shadow function
+export const elevationShadowStyle = (
+  elevation: number,
+  shadowColor = COLORS.black,
+  offsetWidth = 2,
+  offsetHeight = 0.5,
+  opacity = 0.6,
+) => {
+  return {
+    elevation,
+    shadowColor: shadowColor,
+    shadowOffset: {width: offsetWidth, height: offsetHeight || 0.5 * elevation},
+    shadowOpacity: opacity,
+    shadowRadius: elevation,
+  };
+};
+
+// Create reducer
+export const createReducer = (initialState: any, handlers: any) => {
+  return function reducer(state = initialState, action: any) {
+    if (Object.prototype.hasOwnProperty.call(handlers, action.type)) {
+      logOnConsole(handlers[action.type](state, action));
+      return handlers[action.type](state, action);
+    } else {
+      return state;
+    }
+  };
+};
+
+// Getting file extension
+export const getExtension = (fileName: string) => {
+  return /[.]/.exec(fileName) ? /[^.]+$/.exec(fileName) : undefined;
+};
+
+// Capitalize first letter
+export const capitalizeFirst = (name: string) => {
+  return name.slice(0, 1).toUpperCase() + name.slice(1);
 };

@@ -9,6 +9,7 @@ import Toast from 'react-native-toast-message';
 import {APP_CONSTANTS} from '../utils/constants/appConstants';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import AppLoader from '../components/AppLoader';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 
 const AppContainer = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,7 +22,9 @@ const AppContainer = () => {
     <SafeAreaProvider>
       <NetworkManager />
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Navigation />
+      <BottomSheetModalProvider>
+        <Navigation />
+      </BottomSheetModalProvider>
       <Toast config={toastConfig} />
       <AppLoader />
     </SafeAreaProvider>
