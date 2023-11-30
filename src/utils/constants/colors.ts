@@ -8,6 +8,7 @@ export const COLORS = {
   red: '#EB5757',
   text_color: '#042759',
   bright_blue: '#4681f4',
+  neutralLightGray: '#B6B6B6',
 };
 
 export const GRADIENT_COLORS = {

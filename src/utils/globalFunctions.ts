@@ -86,3 +86,25 @@ export const elevationShadowStyle = (
     shadowRadius: elevation,
   };
 };
+
+// Create reducer
+export const createReducer = (initialState: any, handlers: any) => {
+  return function reducer(state = initialState, action: any) {
+    if (Object.prototype.hasOwnProperty.call(handlers, action.type)) {
+      logOnConsole(handlers[action.type](state, action));
+      return handlers[action.type](state, action);
+    } else {
+      return state;
+    }
+  };
+};
+
+// Getting file extension
+export const getExtension = (fileName: string) => {
+  return /[.]/.exec(fileName) ? /[^.]+$/.exec(fileName) : undefined;
+};
+
+// Capitalize first letter
+export const capitalizeFirst = (name: string) => {
+  return name.slice(0, 1).toUpperCase() + name.slice(1);
+};
